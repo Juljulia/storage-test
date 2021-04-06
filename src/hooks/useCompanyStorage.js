@@ -4,15 +4,16 @@ export const useCompany = () => {
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    const storedCompanies = JSON.parse(localStorage.getItem('companies'));
+    let storedCompanies = JSON.parse(localStorage.getItem('companies'));
+    storedCompanies && storedCompanies.sort();
     storedCompanies && setCompanies(storedCompanies);
   }, []);
 
   const addCompany = (name) => {
     const isExisting = companies.some((company) => company === name);
     if (!isExisting) {
-      localStorage.setItem('companies', JSON.stringify([...companies, name]));
-      setCompanies([...companies, name]);
+      localStorage.setItem('companies', JSON.stringify([name, ...companies]));
+      setCompanies([name, ...companies]);
     }
   };
 
