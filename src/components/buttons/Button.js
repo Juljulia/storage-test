@@ -19,22 +19,9 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const Button = ({
-  disabled,
-  onClick,
-  title,
-  navButton,
-  left,
-  right,
-}) => {
+export const Button = ({ disabled, onClick, title }) => {
   return (
-    <StyledButton
-      disabled={disabled}
-      onClick={onClick}
-      navButton={navButton}
-      left={left}
-      right={right}
-    >
+    <StyledButton disabled={disabled} onClick={onClick}>
       {title}
     </StyledButton>
   );

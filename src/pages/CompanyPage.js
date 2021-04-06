@@ -1,6 +1,5 @@
 import { navigate } from '@reach/router';
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { Button } from '../components/buttons/Button';
 import { NavButton } from '../components/buttons/NavButton';
 import { Form } from '../components/form/Form';
@@ -11,10 +10,6 @@ import { ScrollContainer } from '../components/ScrollContainer';
 import { View } from '../components/View';
 import { useCompany } from '../hooks/useCompanyStorage';
 import { usePerson } from '../hooks/usePersonStorage';
-
-const StyledText = styled.p`
-  margin: 0;
-`;
 
 export const CompanyPage = () => {
   const { addCompany, companies } = useCompany();
@@ -93,7 +88,7 @@ export const CompanyPage = () => {
             ></ListItem>
           ))
         ) : (
-          <StyledText>No employers</StyledText>
+          <p>No employers</p>
         )}
       </ScrollContainer>
       <NavButton

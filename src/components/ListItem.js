@@ -14,10 +14,6 @@ const StyledListItem = styled.div`
   padding: 4px 0 4px 8px;
 `;
 
-const StyledText = styled.p`
-  margin: 0;
-`;
-
 const SmallButton = styled(StyledButton)`
   background-color: #547d81;
   color: white;
@@ -29,7 +25,7 @@ const SmallButton = styled(StyledButton)`
 export const ListItem = ({ text, disabled, onClick, value, btnTitle }) => {
   return (
     <StyledListItem>
-      <StyledText>{text}</StyledText>
+      <p>{text}</p>
       {btnTitle && (
         <SmallButton onClick={onClick} value={value} disabled={disabled}>
           {btnTitle}

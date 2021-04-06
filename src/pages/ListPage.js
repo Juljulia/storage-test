@@ -1,16 +1,15 @@
 import { Link, navigate } from '@reach/router';
 import React, { useState } from 'react';
+import styled from 'styled-components';
+import { NavButton } from '../components/buttons/NavButton';
 import { RadioButton } from '../components/form/RadioButton';
 import { ListItem } from '../components/ListItem';
-import { NavButton } from '../components/buttons/NavButton';
 import { ScrollContainer } from '../components/ScrollContainer';
 import { View } from '../components/View';
 import { useCompany } from '../hooks/useCompanyStorage';
 import { usePerson } from '../hooks/usePersonStorage';
-import styled from 'styled-components';
 
 const StyledText = styled.p`
-  margin: 0;
   margin-bottom: 4px;
   font-weight: bold;
 `;

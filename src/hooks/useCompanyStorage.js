@@ -5,8 +5,10 @@ export const useCompany = () => {
 
   useEffect(() => {
     let storedCompanies = JSON.parse(localStorage.getItem('companies'));
-    storedCompanies && storedCompanies.sort();
-    storedCompanies && setCompanies(storedCompanies);
+    if (storedCompanies) {
+      storedCompanies.sort();
+      setCompanies(storedCompanies);
+    }
   }, []);
 
   const addCompany = (name) => {

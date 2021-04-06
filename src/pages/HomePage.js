@@ -1,10 +1,10 @@
 import { navigate } from '@reach/router';
 import React, { useState } from 'react';
 import { Button } from '../components/buttons/Button';
+import { NavButton } from '../components/buttons/NavButton';
 import { Form } from '../components/form/Form';
 import { InputField } from '../components/form/InputField';
 import { ListItem } from '../components/ListItem';
-import { NavButton } from '../components/buttons/NavButton';
 import { ScrollContainer } from '../components/ScrollContainer';
 import { View } from '../components/View';
 import { usePerson } from '../hooks/usePersonStorage';

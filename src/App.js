@@ -1,6 +1,6 @@
 import { Router } from '@reach/router';
-import { HomePage } from './pages/HomePage';
 import { CompanyPage } from './pages/CompanyPage';
+import { HomePage } from './pages/HomePage';
 import { ListPage } from './pages/ListPage';
 
 function App() {

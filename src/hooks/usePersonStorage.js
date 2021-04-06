@@ -5,7 +5,9 @@ export const usePerson = () => {
 
   useEffect(() => {
     const storedPersons = JSON.parse(localStorage.getItem('persons'));
-    storedPersons && setPersons(storedPersons);
+    if (storedPersons) {
+      setPersons(storedPersons);
+    }
   }, []);
 
   const addPerson = (name) => {
@@ -16,8 +18,8 @@ export const usePerson = () => {
       company: '',
     };
 
-    localStorage.setItem('persons', JSON.stringify([...persons, user]));
-    setPersons([...persons, user]);
+    localStorage.setItem('persons', JSON.stringify([user, ...persons]));
+    setPersons([user, ...persons]);
   };
 
   const updatePerson = (userId, chosenCompany = '') => {
