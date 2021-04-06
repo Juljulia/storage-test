@@ -61,44 +61,41 @@ export const CompanyPage = () => {
           label='Write the name of a company:'
           onChange={(e) => setCompany(e.target.value)}
         ></InputField>
-        <Button title='Create' type='submit' disabled={company === ''}></Button>
+        <Button title='Add' type='submit' disabled={company === ''}></Button>
       </Form>
-      <div>
-        {companies.length > 0 && (
-          <h4>Select a company to see who works there:</h4>
+      {companies.length > 0 && (
+        <h4>Select a company to see who works there:</h4>
+      )}
+      <ScrollContainer>
+        {companies.map((company, i) => (
+          <RadioButton
+            htmlFor={company}
+            key={i}
+            id={company}
+            name='company'
+            value={company}
+            onChange={(e) => setSelectedCompany(e.target.value)}
+            label={company}
+          ></RadioButton>
+        ))}
+      </ScrollContainer>
+
+      {companies.length > 0 && <h4>Employers at {selectedCompany}</h4>}
+      <ScrollContainer>
+        {employees.length > 0 || companies.length === 0 ? (
+          employees.map((person) => (
+            <ListItem
+              key={person.id}
+              text={person.name}
+              onClick={handleUpdatePerson}
+              value={person.id}
+              btnTitle='Remove'
+            ></ListItem>
+          ))
+        ) : (
+          <StyledText>No employers</StyledText>
         )}
-        <ScrollContainer>
-          {companies.map((company, i) => (
-            <RadioButton
-              htmlFor={company}
-              key={i}
-              id={company}
-              name='company'
-              value={company}
-              onChange={(e) => setSelectedCompany(e.target.value)}
-              label={company}
-            ></RadioButton>
-          ))}
-        </ScrollContainer>
-      </div>
-      <div>
-        {companies.length > 0 && <h4>Employers at {selectedCompany}</h4>}
-        <ScrollContainer>
-          {employees.length > 0 || companies.length === 0 ? (
-            employees.map((person) => (
-              <ListItem
-                key={person.id}
-                text={person.name}
-                onClick={handleUpdatePerson}
-                value={person.id}
-                btnTitle='Remove'
-              ></ListItem>
-            ))
-          ) : (
-            <StyledText>No employers</StyledText>
-          )}
-        </ScrollContainer>
-      </div>
+      </ScrollContainer>
       <NavButton
         title='Previous'
         onClick={() => handleNavigate('left')}

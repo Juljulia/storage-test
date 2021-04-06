@@ -11,6 +11,8 @@ import styled from 'styled-components';
 
 const StyledText = styled.p`
   margin: 0;
+  margin-bottom: 4px;
+  font-weight: bold;
 `;
 
 export const ListPage = () => {
@@ -35,10 +37,10 @@ export const ListPage = () => {
     <View>
       <h2>Employment</h2>
       {notEmployed.length === 0 ? (
-        <StyledText>
+        <p>
           Everyone has find a job. Go back to the <Link to='/'>first page</Link>{' '}
           to add more persons and apply a job to them.
-        </StyledText>
+        </p>
       ) : (
         <StyledText>Select a company to apply persons to:</StyledText>
       )}
@@ -56,6 +58,7 @@ export const ListPage = () => {
             ></RadioButton>
           ))}
       </ScrollContainer>
+      {notEmployed.length > 0 && <StyledText>Needs a job:</StyledText>}
       <ScrollContainer>
         {notEmployed.length > 0 &&
           notEmployed.map((person) => (

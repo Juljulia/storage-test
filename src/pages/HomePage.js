@@ -27,10 +27,10 @@ export const HomePage = () => {
       <h2>Welcome!</h2>
       <Form onSubmit={handleSubmit}>
         <InputField
-          label='Write a name:'
+          label='Write a name to add a person:'
           onChange={(e) => setName(e.target.value)}
         ></InputField>
-        <Button title='Create' type='submit' disabled={name === ''}></Button>
+        <Button title='Add' type='submit' disabled={name === ''}></Button>
       </Form>
       {persons.length > 0 && <h3>Persons:</h3>}
       <ScrollContainer>
