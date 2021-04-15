@@ -23,11 +23,11 @@ export const usePerson = () => {
   };
 
   const updatePerson = (userId, chosenCompany = '') => {
-    const userIndex = persons.findIndex((person) => person.id === userId);
+    const index = persons.findIndex((person) => person.id === userId);
     let updatedPersons = [...persons];
-    updatedPersons[userIndex] = {
-      ...updatedPersons[userIndex],
-      company: chosenCompany === '' ? '' : chosenCompany,
+    updatedPersons[index] = {
+      ...updatedPersons[index],
+      company: chosenCompany,
     };
     localStorage.setItem('persons', JSON.stringify(updatedPersons));
     setPersons(updatedPersons);

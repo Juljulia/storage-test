@@ -19,8 +19,7 @@ export const ListPage = () => {
   const { updatePerson, persons } = usePerson();
   const [selectedCompany, setSelectedCompany] = useState('');
 
-  const notEmployed =
-    persons && persons.filter((person) => person.company === '');
+  const notEmployed = persons.filter((person) => person.company === '');
 
   function handleUpdatePerson(e) {
     e.preventDefault();
