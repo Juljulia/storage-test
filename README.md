@@ -2,6 +2,14 @@
 
 Small application using the localstorage to add, update and remove data. 
 
+#### Installation
+```
+$ git clone git@github.com:Juljulia/storage-test.git
+$ cd storage-test
+$ npm install
+$ npm start
+```
+
 Features: 
 - Add persons
 - Add companies
